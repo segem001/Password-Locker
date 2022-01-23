@@ -33,3 +33,10 @@ def test_save_userdetails(self):
 		'''
 		self.new_user.save_userdetails()
 		self.assertEqual(len(UserDetails.users_array),1)
+class TestUserCredentials(unittest.TestCase):
+	'''
+	Test class that defines test cases for the credentials class behaviours.
+
+	Args:
+	    unittest.TestCase: helps in creating test cases
+	'''
