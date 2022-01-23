@@ -35,3 +35,10 @@ def define_credential(user_name,site_name,account_name,password):
 	'''
 	new_credential=UserCredential(user_name,site_name,account_name,password)
 	return new_credential
+
+def display_credentials(user_name):
+	'''
+	Function to display credentials saved by a user
+	'''
+	return UserCredential.display_usercredentials(user_name)
+	
