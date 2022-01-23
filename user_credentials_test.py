@@ -26,3 +26,10 @@ def test__init__(self):
 	self.assertEqual(self.new_user.first_name,'Kiprono')
 	self.assertEqual(self.new_user.last_name,'Segem')
 	self.assertEqual(self.new_user.password,'123')
+
+def test_save_userdetails(self):
+		'''
+		Test to check if the new users info is saved into the users list
+		'''
+		self.new_user.save_userdetails()
+		self.assertEqual(len(UserDetails.users_array),1)
