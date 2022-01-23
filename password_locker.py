@@ -9,11 +9,13 @@ def enter_newuser(firstname,lastname,password):
 	'''
 	new_user = UserDetails(firstname,lastname,password)
 	return new_user
+
 def save_user(user):
 	'''
 	Function to save a new user account
-		'''
+	'''
 	UserDetails.save_userdetails(user)
+
 
 def confirm_user(first_name,password):
 	'''
@@ -36,12 +38,23 @@ def define_credential(user_name,site_name,account_name,password):
 	new_credential=UserCredential(user_name,site_name,account_name,password)
 	return new_credential
 
+def save_credential(credential):
+	'''
+	Function to save a newly created credential
+	'''
+	UserCredential.save_usercredentials(credential)
+
 def display_credentials(user_name):
 	'''
 	Function to display credentials saved by a user
 	'''
 	return UserCredential.display_usercredentials(user_name)
-
+	
+# def copy_credential(site_name):
+# 	'''
+# 	Function to copy a credentials details to the clipboard
+# 	'''
+# 	return Credential.copy_credential(site_name)
 
 def main():
 	print(' ')
@@ -147,5 +160,4 @@ def main():
 
 if __name__ == '__main__':
 	main()
-
 
