@@ -12,3 +12,8 @@ class TestUserDetails(unittest.TestCase):
 	Args:
 	    unittest.TestCase: helps in creating test cases
 	'''
+def setUp(self):
+	'''
+	Function to create a user account before each test
+	'''
+	self.new_user = UserDetai
