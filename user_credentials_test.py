@@ -40,3 +40,17 @@ class TestUserCredentials(unittest.TestCase):
 	Args:
 	    unittest.TestCase: helps in creating test cases
 	'''
+
+	def test_check_user(self):
+		'''
+		Function to test whether the login in function check_user works as expected
+		'''
+		self.new_user = UserDetails('Kiprono','Segem','123')
+		self.new_user.save_userdetails()
+		user2 = UserDetails('davy','langat','123')
+		user2. save_userdetails()
+
+		for user in UserDetails.users_array:
+			if user.first_name == user2.first_name and user.password == user2.password:
+				current_user = user.first_name
+		return current_user
