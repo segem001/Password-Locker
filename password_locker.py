@@ -21,3 +21,10 @@ def confirm_user(first_name,password):
 	'''
 	c = UserDetails.check_user(first_name,password)
 	return c
+
+def generate_password():
+	'''
+	Function to generate a password automatically
+	'''
+	gen_pass = UserCredential.generate_password()
+	return gen_pass
