@@ -9,8 +9,15 @@ def enter_newuser(firstname,lastname,password):
 	'''
 	new_user = UserDetails(firstname,lastname,password)
 	return new_user
-	def save_user(user):
+def save_user(user):
+	'''
+	Function to save a new user account
 		'''
-		Function to save a new user account
-		'''
-		UserDetails.save_userdetails(user)
+	UserDetails.save_userdetails(user)
+
+def confirm_user(first_name,password):
+	'''
+	Function that verifies the existance of the user before creating credentials
+	'''
+	c = UserDetails.check_user(first_name,password)
+	return c
