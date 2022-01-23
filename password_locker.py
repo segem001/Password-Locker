@@ -28,3 +28,10 @@ def generate_password():
 	'''
 	gen_pass = UserCredential.generate_password()
 	return gen_pass
+
+def define_credential(user_name,site_name,account_name,password):
+	'''
+	Function to create a new credential
+	'''
+	new_credential=UserCredential(user_name,site_name,account_name,password)
+	return new_credential
