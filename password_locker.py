@@ -9,3 +9,8 @@ def enter_newuser(firstname,lastname,password):
 	'''
 	new_user = UserDetails(firstname,lastname,password)
 	return new_user
+	def save_user(user):
+		'''
+		Function to save a new user account
+		'''
+		UserDetails.save_userdetails(user)
