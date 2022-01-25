@@ -115,7 +115,16 @@ class TestUserCredentials(unittest.TestCase):
 		facebook.save_usercredentials()
 		credential_exists = UserCredential.search_by_site_name('Facebook')
 		self.assertEqual(credential_exists.site_name,facebook.site_name)
-
+	
+	def test_delete_credentials(self):
+		'''
+        checks whether delete function is working to remove credentials
+        '''
+		self.new_credential.save_usercredentials()
+		test_credential = UserCredential('Kiprono','Facebook','Segem','123')
+		test_credential.save_usercredentials()
+		self.new_credential.delete_credentials()
+		self.assertEqual(len(UserCredential.user_credentials_array), 1)
 # 	def test_copy_credential(self):
 # 		'''
 # 		Test to check if the copy a credential method copies the correct credential
