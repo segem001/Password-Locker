@@ -2,6 +2,10 @@
 # import pyperclip
 
 from user_credentials import UserDetails, UserCredential
+def credentials_exists(name):
+    """ Method to find the existing account depending on the account name input"""
+
+    return UserCredential.find_my_name(name)
 
 def enter_newuser(firstname,lastname,password):
 	'''
@@ -90,7 +94,7 @@ def main():
 				print(' ')
 				while True:
 					print("-"*60)
-					print('Navigation codes: \n cc-Create a Credential \n dc-Display Credentials \n copy-Copy Password \n ex-Exit')
+					print('Navigation codes: \n cc-Create a Credential \n dc-Display Credentials \n del-Delete Credential \n ex-Exit')
 					short_code = input('Enter a choice: ').lower().strip()
 					print("-"*60)
 					if short_code == 'ex':
@@ -135,22 +139,27 @@ def main():
 							print(' ')
 							print("You don't seem to have any credentials saved yet")
 							print(' ')
-					elif short_code == 'copy':
+					elif short_code == 'del':
 						print(' ')
-						chosen_site = input('Enter the site name for the credential password to copy: ')
-						copy_credential(chosen_site)
-						print('')
-					else:
-						print('Oops! Wrong option entered. Try again.')
+						input('Enter the name of credential you want to delete: ')
+						site_name = input()
+						if credentials_exists(site_name):
+							print(f'{site_name}  deleted successfully!')
+						else:
+							print(f'I cant find {site_name}')
+		# 				copy_credential(chosen_site)
+		# 				print('')
+		# 			else:
+		# 				print('Oops! Wrong option entered. Try again.')
 
-			else: 
-				print(' ')
-				print('Oops! Wrong details entered. Try again or Create an Account.')		
+		# 	else: 
+		# 		print(' ')
+		# 		print('Oops! Wrong details entered. Try again or Create an Account.')		
 		
-		else:
-			print("-"*60)
-			print(' ')
-			print('Oops! Wrong option entered. Try again.')
+		# else:
+		# 	print("-"*60)
+		# 	print(' ')
+		# 	print('Oops! Wrong option entered. Try again.')
 				
 
 
