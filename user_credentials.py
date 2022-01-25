@@ -78,7 +78,12 @@ class UserCredential:
 # 	# 	'''
 # 	# 	gen_pass=''.join(random.choice(char) for _ in range(size))
 # 	# 	return gen_pass
-
+	@classmethod
+	def find_my_name(cls, account_name):
+		for site in cls.credentials_array:
+			if site.site_name == account_name:
+				return site
+		return False
 	@classmethod
 	def display_usercredentials(cls,user_name):
 		'''
@@ -89,6 +94,9 @@ class UserCredential:
 			if credential.user_name == user_name:
 				user_credentials_array.append(credential)
 		return user_credentials_array
+
+	def delete_credentials(self):
+		UserCredential.user_credentials_array.remove(self)
 				
 
 	
@@ -100,6 +108,14 @@ class UserCredential:
 		for credential in cls.credentials_array:
 			if credential.site_name == site_name:
 				return credential
+
+				
+	@classmethod
+	def page_exists(cls, pager):
+		for pagy in cls.credentials_array:
+			if pagy.site_name == pager:
+				return pagy
+		return False
 
 # 	# @classmethod
 # 	# def copy_credential(cls,site_name):
